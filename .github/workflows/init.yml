@@ -1,0 +1,16 @@
+name: Ruby
+
+on:
+  workflow_dispatch
+
+jobs:
+  test:
+    runs-on: self-hosted
+
+    steps:
+    - uses: actions/checkout@v2
+    - run: bundle install
+    - name: Run rspec
+      run: bundle exec rspec
+    - name: Run rubocop
+      run: bundle exec rubocop
