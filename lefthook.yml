@@ -1,0 +1,5 @@
+pre-commit:
+  parallel: true
+    ruby:
+      glob: "*.rb"
+      run: "rubocop --force-exclusion {staged_files}"
