@@ -7,6 +7,7 @@ gem 'puma'
 gem 'rack'
 
 group :development do
+  gem 'pry'
   gem 'rubocop'
 end
 

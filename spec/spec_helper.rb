@@ -4,9 +4,13 @@ ENV['APP_ENV'] = 'test'
 
 Dir["#{Dir.pwd}**/*.rb"].sort.each { |file| require file }
 require 'rack/test'
+Dir["#{Dir.pwd}/**/support/**.rb"].sort.each { |file| require file }
 
 RSpec.configure do |config|
   config.include Rack::Test::Methods
+  config.include RackHelpers
+  config.include ResponseHelpers
+
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end

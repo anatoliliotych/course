@@ -2,8 +2,13 @@
 
 module Course
   class App
-    def call(_env)
-      [200, { 'Content-Type' => 'text/html' }, ['Hello world']]
+    def call(env)
+      request = Rack::Request.new(env)
+      serve_request(request)
+    end
+
+    def serve_request(request)
+      Router.new(request).route!
     end
   end
 end
