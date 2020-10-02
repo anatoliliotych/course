@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 ruby '2.6.3'
 gem 'puma'
 gem 'rack'
+gem 'rack-cache'
 
 group :development do
   gem 'pry'
